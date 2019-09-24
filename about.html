@@ -32,9 +32,9 @@
     </div>
     <nav>
         <div class="nav-wrapper container">
-            <a href="#!" class="brand-logo">ZQARTWORK</a>
+            <a href="index.html" class="brand-logo">ZQARTWORK</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="about.html">ABOUT</a></li>
+                <li class="active"><a href="about.html">ABOUT</a></li>
                 <li><a href="badges.html">WORKS</a></li>
                 <li><a href="collapsible.html">EXPERIENCE</a></li>
                 <li><a href="mobile.html">CONTACT</a></li>
@@ -45,7 +45,7 @@
 
     <!-- Sidenav -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="about.html">ABOUT</a></li>
+        <li class="active"><a href="about.html">ABOUT</a></li>
         <li><a href="badges.html">WORKS</a></li>
         <li><a href="collapsible.html">EXP</a></li>
         <li><a href="mobile.html">CONTACT</a></li>
@@ -55,19 +55,8 @@
     <div class="container">
         <div class="section">
             <div class="flex-wrapper">
-                <div class="zq-pic flex-wrapper">
-                    <img src="img/official/zq-pic.png" alt="">
-                </div>
-                <div class="bg-title">
-                    <img src="img/official/svg/logo_title.svg" alt="">
-                    <div class="zq-d-content">
-                        Web / APP - UI / UX Designer <br>
-                        Front-end Designer <br>
-                        Illustrator <br>
-                        Graphic Designer <br>
-                    </div>
-                    <div class="zq-more flex-wrapper align-start just-right">MORE</div>
-                </div>
+                <div class="left-part about-pic-section"></div>
+                <div class="right-part about-txt-section"></div>
             </div>
         </div>
     </div>
@@ -81,9 +70,9 @@
         $(document).ready(function () {
             $(".container").hide();
             setTimeout(function () {
-                $('.preload-section').fadeOut();
+                $('.preload-section').fadeOut(500);
                 $('.container').fadeIn(1000);
-            }, 3000);
+            }, 2000);
             $('.sidenav').sidenav({
                 edge: 'right',
             });
