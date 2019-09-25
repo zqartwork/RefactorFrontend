@@ -19,71 +19,131 @@
     <!-- owlCarousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- 自訂設置 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <div class="preload-section">
-        <img src="img/preload.svg" alt="">
-        LOADING
-    </div>
-    <nav>
-        <div class="nav-wrapper container">
-            <a href="#!" class="brand-logo">ZQARTWORK</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="badges.html">WORKS</a></li>
-                <li><a href="collapsible.html">EXPERIENCE</a></li>
-                <li><a href="mobile.html">CONTACT</a></li>
-            </ul>
-            <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="fas fa-bars"></i></a>
+    <div class="wrapper" id="app">
+        <!-- Navbar -->
+        <div class="preload-section">
+            <img src="img/preload.svg" alt="">
+            LOADING
         </div>
-    </nav>
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo" @click='page=0'>ZQARTWORK</a>
+                <ul class="right hide-on-med-and-down">
+                    <li :class='{active:page==1}'><a href="#" @click='page=1'>ABOUT</a></li>
+                    <li><a href="badges.html">WORKS</a></li>
+                    <li><a href="collapsible.html">EXPERIENCE</a></li>
+                    <li><a href="mobile.html">CONTACT</a></li>
+                </ul>
+                <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="fas fa-bars"></i></a>
+            </div>
+        </nav>
 
-    <!-- Sidenav -->
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="badges.html">WORKS</a></li>
-        <li><a href="collapsible.html">EXP</a></li>
-        <li><a href="mobile.html">CONTACT</a></li>
-    </ul>
+        <!-- Sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li :class='{active:page==1}'><a href="#" @click='page=1'>ABOUT</a></li>
+            <li><a href="badges.html">WORKS</a></li>
+            <li><a href="collapsible.html">EXP</a></li>
+            <li><a href="mobile.html">CONTACT</a></li>
+        </ul>
 
-    <!-- 主要內容區域 -->
-    <div class="container">
-        <div class="section">
-            <div class="flex-wrapper">
-                <div class="zq-pic flex-wrapper">
-                    <img src="img/official/zq-pic.png" alt="">
-                </div>
-                <div class="bg-title">
-                    <img src="img/official/svg/logo_title.svg" alt="">
-                    <div class="zq-d-content">
-                        Web / APP - UI / UX Designer <br>
-                        Front-end Designer <br>
-                        Illustrator <br>
-                        Graphic Designer <br>
+        <!-- 主要內容區域 -->
+        <div class="">
+            <div class="section section-index" id="index" v-show="page==0">
+                <div class="flex-wrapper">
+                    <div class="zq-pic flex-wrapper">
+                        <img src="img/official/zq-pic.png" alt="" class="lazyload">
                     </div>
-                    <div class="zq-more flex-wrapper align-start just-right">MORE</div>
+                    <div class="bg-title">
+                        <img src="img/official/svg/logo_title.svg" alt="" class="animated fadeInRight">
+                        <div class="zq-d-content">
+                            <div class="animated fadeInLeft delay-1s">
+                                Web / APP - UI / UX Designer
+                            </div>
+                            <div class="animated fadeInLeft delay-2s">
+                                Front-end Designer <br>
+                            </div>
+                            <div class="animated fadeInLeft delay-3s">
+                                Illustrator <br>
+                            </div>
+                            <div class="animated fadeInLeft delay-4s">
+                                Graphic Designer <br>
+                            </div>
+                        </div>
+                        <div class="zq-more flex-wrapper align-start just-right animated fadeIn delay-5s"
+                            @click="page=1">MORE
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-about" id="about" v-show="page==1" style="overflow: hidden;">
+                <div class="flex-wrapper just-left">
+                    <div class="clip-work-part">
+                        <div class="about-clip-a animated fadeInLeft delay-1s">
+                            <div class="mask">- Illustration</div>
+                            <div class="pic-a lazyload"></div>
+                        </div>
+                        <div class="about-clip-b animated fadeInLeft delay-1500">
+                            <div class="mask">- UIUX Design</div>
+                            <div class="pic-b lazyload"></div>
+                        </div>
+                        <div class="about-clip-c animated fadeInLeft delay-2s slow">
+                            <div class="mask">- Graphic Design</div>
+                            <div class="pic-c lazyload"></div>
+                        </div>
+                        <div class="about-clip-d animated fadeInLeft delay-2500 slower">
+                            <div class="mask">- Front-end Dev</div>
+                            <div class="pic-d lazyload"></div>
+                        </div>
+                    </div>
+                    <div class="about-description-part">
+                        我是梁占青，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。<br>
+                        個性積極開朗，好奇且樂於學習，時時更新自己的能力。<br>
+                        <br>
+                        大三暑假進入企業半工半讀，<br>
+                        畢業時因為能力受到肯定，獲得企業正職工作證明 1 年，<br>
+                        累積 B2B 工作經驗、作品以及專業設計流程、技術。<br>
+                        <br>
+                        有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練，<br>
+                        語言能力 多益 890 分，我是個 跨領域且善於溝通的人才。<br>
+                        出社會後嘗試各個領域挑戰自己，累積實力。<br>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- 3.4.1 jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <script src="js/custom.js"></script>
     <script>
+        new Vue({
+            el: '#app',
+            data: {
+                page: 0,
+            },
+            methods: {
+            },
+        })
+    </script>
+    <script>
+        $(".lazyload").lazyload();
         $(document).ready(function () {
-            $(".container").hide();
+            $(".section-index").hide();
             setTimeout(function () {
                 $('.preload-section').fadeOut();
-                $('.container').fadeIn(1000);
-            }, 3000);
+                $('.section-index').fadeIn(1000);
+            }, 2000);
             $('.sidenav').sidenav({
                 edge: 'right',
             });

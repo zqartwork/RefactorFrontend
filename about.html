@@ -52,7 +52,7 @@
     </ul>
 
     <!-- 主要內容區域 -->
-    <div class="container">
+    <div class="container conitaner-main">
         <div class="section">
             <div class="flex-wrapper">
                 <div class="left-part about-pic-section"></div>
@@ -68,11 +68,11 @@
     <script src="js/custom.js"></script>
     <script>
         $(document).ready(function () {
-            $(".container").hide();
+            $(".preload-section, .container-main").hide();
             setTimeout(function () {
-                $('.preload-section').fadeOut(500);
-                $('.container').fadeIn(1000);
-            }, 2000);
+                // $('.preload-section').fadeOut(500);
+                $('.container-main').fadeIn(1000);
+            }, 1000);
             $('.sidenav').sidenav({
                 edge: 'right',
             });
