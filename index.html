@@ -19,7 +19,7 @@
     <!-- owlCarousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <!-- 自訂設置 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -54,7 +54,7 @@
 
         <!-- 主要內容區域 -->
         <div class="">
-            <div class="section section-index" id="index" v-show="page==0">
+            <div class="section section-index" id="index" v-if="page==0">
                 <div class="flex-wrapper">
                     <div class="zq-pic flex-wrapper">
                         <img src="img/official/zq-pic.png" alt="" class="lazyload">
@@ -81,37 +81,39 @@
                     </div>
                 </div>
             </div>
-            <div class="section section-about" id="about" v-show="page==1" style="overflow: hidden;">
+            <div class="section section-about" id="about" v-if="page==1" style="overflow: hidden;">
                 <div class="flex-wrapper just-left">
                     <div class="clip-work-part">
-                        <div class="about-clip-a animated fadeInLeft delay-1s">
+                        <div class="about-clip-a animated fadeInLeft delay-1s ">
                             <div class="mask">- Illustration</div>
-                            <div class="pic-a lazyload"></div>
+                            <div class="pic-a"></div>
                         </div>
-                        <div class="about-clip-b animated fadeInLeft delay-1500">
+                        <div class="about-clip-b animated fadeInLeft delay-1500 ">
                             <div class="mask">- UIUX Design</div>
-                            <div class="pic-b lazyload"></div>
+                            <div class="pic-b"></div>
                         </div>
                         <div class="about-clip-c animated fadeInLeft delay-2s slow">
                             <div class="mask">- Graphic Design</div>
-                            <div class="pic-c lazyload"></div>
+                            <div class="pic-c"></div>
                         </div>
-                        <div class="about-clip-d animated fadeInLeft delay-2500 slower">
+                        <div class="about-clip-d animated fadeInLeft delay-2500 slow">
                             <div class="mask">- Front-end Dev</div>
-                            <div class="pic-d lazyload"></div>
+                            <div class="pic-d"></div>
                         </div>
                     </div>
                     <div class="about-description-part">
-                        我是梁占青，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。<br>
-                        個性積極開朗，好奇且樂於學習，時時更新自己的能力。<br>
-                        <br>
-                        大三暑假進入企業半工半讀，<br>
-                        畢業時因為能力受到肯定，獲得企業正職工作證明 1 年，<br>
-                        累積 B2B 工作經驗、作品以及專業設計流程、技術。<br>
-                        <br>
-                        有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練，<br>
-                        語言能力 多益 890 分，我是個 跨領域且善於溝通的人才。<br>
-                        出社會後嘗試各個領域挑戰自己，累積實力。<br>
+                        <p>
+                            我是梁占青，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。<br>
+                            個性積極開朗，好奇且樂於學習，時時更新自己的能力。<br>
+                            <br>
+                            大三暑假進入企業半工半讀，<br>
+                            畢業時因為能力受到肯定，獲得企業正職工作證明 1 年，<br>
+                            累積 B2B 工作經驗、作品以及專業設計流程、技術。<br>
+                            <br>
+                            有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練，<br>
+                            語言能力 多益 890 分，我是個 跨領域且善於溝通的人才。<br>
+                            出社會後嘗試各個領域挑戰自己，累積實力。<br>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -130,7 +132,7 @@
         new Vue({
             el: '#app',
             data: {
-                page: 0,
+                page: 1,
             },
             methods: {
             },

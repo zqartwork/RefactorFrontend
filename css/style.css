@@ -285,12 +285,11 @@ nav a.sidenav-trigger i {
 .pic-d {
   height: 100%;
   width: 100%;
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
   background-repeat: no-repeat;
   background-size: 110%;
   background-position: center;
   position: relative;
+  cursor: pointer;
 }
 
 .pic-a {
@@ -364,6 +363,22 @@ nav a.sidenav-trigger i {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 14px;
+}
+
+.about-description-part p {
+  position: relative;
+}
+
+.about-description-part p::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  border-top: 1px solid #4c3e31;
+  border-left: 1px solid #4c3e31;
+  top: -30px;
+  left: -30px;
 }
 
 /* RWD */

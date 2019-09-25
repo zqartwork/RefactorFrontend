@@ -253,12 +253,13 @@ nav a.sidenav-trigger i {
   height: 100%;
   width: 100%;
 
-  filter: blur(1px);
+  // filter: blur(1px);
   background-repeat: no-repeat;
   background-size: 110%;
   background-position: center;
 
   position: relative;
+  cursor: pointer;
 }
 .pic-a {
   background-image: url(/img/clip/001.jpg);
@@ -316,6 +317,20 @@ nav a.sidenav-trigger i {
   align-items: center;
 
   padding: 0 14px;
+  p {
+    position: relative;
+  }
+  p::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    border-top: 1px solid $topichover;
+    border-left: 1px solid $topichover;
+    top: -30px;
+    left: -30px;
+  }
 }
 
 /* RWD */
