@@ -14,7 +14,7 @@ body {
   font-family: "Noto Sans TC", "Open Sans";
   font-size: 16px;
   font-weight: 400;
-  background: #fff;
+  background: #f4f4f4;
   color: #1e150b;
 }
 
@@ -447,20 +447,21 @@ nav a.sidenav-trigger i {
 
 a.gallery-item {
   display: block;
-  -webkit-box-flex: .25;
-      -ms-flex: .25;
-          flex: .25;
+  -webkit-box-flex: 0.25;
+      -ms-flex: 0.25;
+          flex: 0.25;
   max-width: 100%;
   overflow: hidden;
   border-radius: 5px;
   padding: 14px;
+  margin: 0 14px 0 0;
   border: 1px solid #dedede;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 a.gallery-item:hover {
-  background: #f3f3f3;
+  background: #dedede;
 }
 
 .gallery-item-head {
@@ -487,13 +488,18 @@ a.gallery-item:hover {
   font-weight: 700px;
   font-family: "Noto Sans TC";
   margin-bottom: 14px;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .gallery-item-content {
   font-size: 14px;
   font-family: "Noto Sans TC";
   font-weight: 300;
-  color: #b2b2b2;
+  color: #707070;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,8 +508,59 @@ a.gallery-item:hover {
           justify-content: space-between;
 }
 
+.gallery-item-content-des,
+.gallery-item-content-time {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .gallery-item-content-time {
   font-family: "Open Sans";
+}
+
+nav .nav-wrapper i.backer {
+  color: #b2b2b2;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* INSIDE THE WORK */
+.banner-section {
+  width: 100%;
+  padding-top: 120px;
+}
+
+.banner-img-wrapper {
+  padding: 14px;
+  margin: 14px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #dedede;
+}
+
+.work-content-section {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 14px;
+}
+
+.work-content-title {
+  font-size: 24px;
+}
+
+.work-content-details {
+  padding: 14px 0;
+  line-height: 24px;
 }
 
 /* RWD */
