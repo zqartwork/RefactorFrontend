@@ -36,7 +36,7 @@
                 <a href="#!" class="brand-logo" @click='page=0'>ZQARTWORK</a>
                 <ul class="right hide-on-med-and-down">
                     <li :class='{active:page==1}'><a href="#" @click='page=1'>ABOUT</a></li>
-                    <li><a href="badges.html">WORKS</a></li>
+                    <li :class='{active:page==2}'><a href="#" @click='page=2'>WORKS</a></li>
                     <li><a href="collapsible.html">EXPERIENCE</a></li>
                     <li><a href="mobile.html">CONTACT</a></li>
                 </ul>
@@ -47,7 +47,7 @@
         <!-- Sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li :class='{active:page==1}'><a href="#" @click='page=1'>ABOUT</a></li>
-            <li><a href="badges.html">WORKS</a></li>
+            <li :class='{active:page==2}'><a href="#" @click='page=2'>WORKS</a></li>
             <li><a href="collapsible.html">EXP</a></li>
             <li><a href="mobile.html">CONTACT</a></li>
         </ul>
@@ -81,40 +81,62 @@
                     </div>
                 </div>
             </div>
-            <div class="section section-about" id="about" v-if="page==1" style="overflow: hidden;">
+            <div class="section section-about" id="about" v-if="page==1">
                 <div class="flex-wrapper just-left">
                     <div class="clip-work-part">
-                        <div class="about-clip-a animated fadeInLeft delay-1s ">
+                        <div class="about-clip-a animated fadeInLeft delay-3s ">
                             <div class="mask">- Illustration</div>
                             <div class="pic-a"></div>
                         </div>
-                        <div class="about-clip-b animated fadeInLeft delay-1500 ">
+                        <div class="about-clip-b animated fadeInLeft delay-3500 ">
                             <div class="mask">- UIUX Design</div>
                             <div class="pic-b"></div>
                         </div>
-                        <div class="about-clip-c animated fadeInLeft delay-2s slow">
+                        <div class="about-clip-c animated fadeInLeft delay-4s slow">
                             <div class="mask">- Graphic Design</div>
                             <div class="pic-c"></div>
                         </div>
-                        <div class="about-clip-d animated fadeInLeft delay-2500 slow">
+                        <div class="about-clip-d animated fadeInLeft delay-4500 slow">
                             <div class="mask">- Front-end Dev</div>
                             <div class="pic-d"></div>
                         </div>
                     </div>
-                    <div class="about-description-part">
+                    <div class="about-description-part animated">
                         <p>
-                            我是梁占青，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。<br>
-                            個性積極開朗，好奇且樂於學習，時時更新自己的能力。<br>
-                            <br>
-                            大三暑假進入企業半工半讀，<br>
-                            畢業時因為能力受到肯定，獲得企業正職工作證明 1 年，<br>
-                            累積 B2B 工作經驗、作品以及專業設計流程、技術。<br>
-                            <br>
-                            有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練，<br>
-                            語言能力 多益 890 分，我是個 跨領域且善於溝通的人才。<br>
-                            出社會後嘗試各個領域挑戰自己，累積實力。<br>
+                            <span>
+                                我是梁占青，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。<br>
+                                個性積極開朗，好奇且樂於學習，時時更新自己的能力。<br>
+                                <br>
+                                大三暑假進入企業半工半讀，<br>
+                                畢業時因為能力受到肯定，獲得企業正職工作證明 1 年，<br>
+                                累積 B2B 工作經驗、作品以及專業設計流程、技術。<br>
+                                <br>
+                                有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練，<br>
+                                語言能力 多益 890 分，我是個 跨領域且善於溝通的人才。<br>
+                                出社會後嘗試各個領域挑戰自己，累積實力。<br>
+                            </span>
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="section section-works" id="works" v-if="page==2">
+                <div class="flex-wrapper gallery-wrapper">
+                    <a class="gallery-item" href="#" v-for="work in works">
+                        <div class="gallery-item-head">
+                            <div class="gallery-item-head-img-wrapper">
+                                <img src="img/work/wk_ecs.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gallery-item-body">
+                            <div class="gallery-item-title">
+                                {{work.title}}
+                            </div>
+                            <div class="gallery-item-content">
+                                <div class="gallery-item-content-des">作品的敘述內容</div>
+                                <div class="gallery-item-content-time">2019 / 01</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -132,10 +154,16 @@
         new Vue({
             el: '#app',
             data: {
-                page: 1,
+                page: 2,
+                works: [{
+                        title: '2019 ECS 春季聯賽',
+                        content: '英雄聯盟次級聯賽官方網站製作',
+                        time: '2018 / 07'
+                    }
+
+                ]
             },
-            methods: {
-            },
+            methods: {},
         })
     </script>
     <script>
@@ -145,7 +173,7 @@
             setTimeout(function () {
                 $('.preload-section').fadeOut();
                 $('.section-index').fadeIn(1000);
-            }, 2000);
+            }, 000);
             $('.sidenav').sidenav({
                 edge: 'right',
             });
