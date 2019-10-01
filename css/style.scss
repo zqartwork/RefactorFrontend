@@ -535,6 +535,12 @@ nav .nav-wrapper i.backer {
   padding: 14px 0;
   line-height: 24px;
 }
+.work-static-website {
+  border: 1px solid $topichover;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: $cnfont;
+}
 
 /* RWD */
 @media (max-width: 1366px) {

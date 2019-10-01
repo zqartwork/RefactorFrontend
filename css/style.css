@@ -563,6 +563,13 @@ nav .nav-wrapper i.backer {
   line-height: 24px;
 }
 
+.work-static-website {
+  border: 1px solid #4c3e31;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Noto Sans TC";
+}
+
 /* RWD */
 @media (max-width: 1366px) {
   .section {
