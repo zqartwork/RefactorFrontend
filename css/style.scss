@@ -45,6 +45,7 @@ body {
   background: $bg;
   color: $topic;
 }
+
 img {
   object-fit: cover;
   object-position: center;
@@ -163,9 +164,12 @@ nav {
   height: 100px;
 }
 
-nav .brand-logo {
+nav .brand-logo,
+nav .brand-logo:visited,
+nav .brand-logo:focus {
   font-family: $logofont;
   font-size: 24px;
+  color: $topichover;
   display: flex;
   line-height: 100px;
 }
@@ -345,10 +349,10 @@ nav a.sidenav-trigger i {
     background: rgba(0, 0, 0, 0);
   }
 
-  &:hover + .pic-a,
-  &:hover + .pic-b,
-  &:hover + .pic-c,
-  &:hover + .pic-d {
+  &:hover+.pic-a,
+  &:hover+.pic-b,
+  &:hover+.pic-c,
+  &:hover+.pic-d {
     filter: blur(0px);
   }
 }
@@ -508,6 +512,7 @@ nav .nav-wrapper i.backer {
   width: 100%;
   padding-top: 120px;
 }
+
 .banner-img-wrapper {
   padding: 14px;
   margin: 14px;
@@ -515,6 +520,7 @@ nav .nav-wrapper i.backer {
   border-radius: 5px;
   text-align: center;
 }
+
 .banner-title {
   font-size: 24px;
   font-weight: 700;
@@ -523,23 +529,39 @@ nav .nav-wrapper i.backer {
 
   border-bottom: 1px solid $c;
 }
+
 .work-content-section {
   font-size: 16px;
   font-weight: 300;
   padding: 14px;
 }
+
 .work-content-title {
   font-size: 24px;
 }
+
 .work-content-details {
   padding: 14px 0;
   line-height: 24px;
 }
-.work-static-website {
+
+.work-static-website,
+.work-static-website:active,
+.work-static-website:visited,
+.work-static-website:focus {
   border: 1px solid $topichover;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 15px 35px;
+  border-radius: 40px;
   font-family: $cnfont;
+  display: inline-block;
+  font-size: 16px;
+  margin: 14px 0;
+
+  transition: .5s;
+}
+
+.work-static-website:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* RWD */

@@ -152,9 +152,12 @@ nav {
   height: 100px;
 }
 
-nav .brand-logo {
+nav .brand-logo,
+nav .brand-logo:visited,
+nav .brand-logo:focus {
   font-family: "Zilap";
   font-size: 24px;
+  color: #4c3e31;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -563,11 +566,23 @@ nav .nav-wrapper i.backer {
   line-height: 24px;
 }
 
-.work-static-website {
+.work-static-website,
+.work-static-website:active,
+.work-static-website:visited,
+.work-static-website:focus {
   border: 1px solid #4c3e31;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 15px 35px;
+  border-radius: 40px;
   font-family: "Noto Sans TC";
+  display: inline-block;
+  font-size: 16px;
+  margin: 14px 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.work-static-website:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* RWD */
