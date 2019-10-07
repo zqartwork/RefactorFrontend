@@ -523,7 +523,7 @@ a.gallery-item:hover {
   font-family: "Open Sans";
 }
 
-nav .nav-wrapper i.backer {
+nav .nav-wrapper i.backer, .backer {
   color: #b2b2b2;
   margin-right: 10px;
   font-size: 16px;

@@ -501,7 +501,7 @@ a.gallery-item {
   font-family: $enfont;
 }
 
-nav .nav-wrapper i.backer {
+nav .nav-wrapper i.backer, .backer {
   color: $d;
   margin-right: 10px;
   font-size: 16px;
@@ -563,6 +563,7 @@ nav .nav-wrapper i.backer {
 .work-static-website:hover {
   background: rgba(0, 0, 0, 0.1);
 }
+
 
 /* RWD */
 @media (max-width: 1366px) {
