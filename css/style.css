@@ -543,6 +543,12 @@ nav .nav-wrapper i.backer, .backer {
   text-align: center;
 }
 
+.banner-img-wrapper img {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
 .banner-title {
   font-size: 24px;
   font-weight: 700;
@@ -583,6 +589,38 @@ nav .nav-wrapper i.backer, .backer {
 
 .work-static-website:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+
+.tags {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rwd-tag, .multi-browser-tag {
+  padding: 5px 15px;
+  color: #f4f4f4;
+  font-weight: 500;
+  margin-right: 5px;
+  font-family: "Noto Sans TC", "Open Sans";
+  font-size: 14px;
+}
+
+.rwd-tag {
+  background: #ef317c;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ef317c), color-stop(100%, #fe7067));
+  background: -webkit-gradient(linear, left top, right top, from(#ef317c), to(#fe7067));
+  background: linear-gradient(to right, #ef317c 0%, #fe7067 100%);
+}
+
+.multi-browser-tag {
+  background: #31a3ef;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #31a3ef), color-stop(100%, #9d79ff));
+  background: -webkit-gradient(linear, left top, right top, from(#31a3ef), to(#9d79ff));
+  background: linear-gradient(to right, #31a3ef 0%, #9d79ff 100%);
 }
 
 /* RWD */
